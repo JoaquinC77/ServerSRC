@@ -14,7 +14,7 @@ public class DAOEmpresa {
     private JdbcTemplate jdbc;
 
     public List<Empresa> getAllEmpresas(){
-        String sql = "SELECT * FROM empresa;";
+        String sql = "SELECT * FROM empresa ORDER BY nombre ASC;";
         try{
             List<Empresa> empresas = jdbc.query(sql, new MappersEmpresa());
             return empresas;
